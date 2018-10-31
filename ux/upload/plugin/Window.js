@@ -52,8 +52,8 @@ Ext.define('Ext.ux.upload.plugin.Window', {
             uploadcomplete: {
                 fn: function(uploader, success, failed)
                 {
-                    if(failed.length == 0)
-                        me.window.hide();
+                    // if(failed.length == 0)
+                    //     me.window.hide();
                 },
                 scope: me
             }
@@ -73,7 +73,7 @@ Ext.define('Ext.ux.upload.plugin.Window', {
             stateId: 'stateGrid',
             columns: [{
                 text: 'Name',
-                flex: 1,
+                width: 200,
                 sortable: false,
                 dataIndex: 'name'
             },
@@ -101,8 +101,8 @@ Ext.define('Ext.ux.upload.plugin.Window', {
                     },
                     {
                         text: 'msg',
-                        width: 175,
                         sortable: true,
+                        flex: 1,
                         dataIndex: 'msg'
                     }],
             viewConfig: {
