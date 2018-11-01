@@ -327,7 +327,7 @@ Ext.define('Ext.ux.upload.Basic', {
                     file.msg = file.msg || me.statusFailedText;
                     break;
                 case 5:
-                    file.msg = me.statusDoneText;
+                    file.msg = file.msg || me.statusDoneText;
                     break;
             }
         }
@@ -402,6 +402,10 @@ Ext.define('Ext.ux.upload.Basic', {
         
         if(response.success == true)
         {
+            if(response.message)
+            {
+                file.msg = '<span style="color: green">' + response.message + '</span>';
+            }
             file.server_error = 0;
             me.success.push(file);
             me.fireEvent('fileuploaded', me, file, response);
